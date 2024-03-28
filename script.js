@@ -1,5 +1,6 @@
 let conta = 0
 let pessoas = 0
+let porcentagem = 0
 
 const contaInput = document.querySelector("#conta")
 contaInput.addEventListener("input", ReceberValorConta)
@@ -9,19 +10,27 @@ function ReceberValorConta(event) {
 }
 
 const PessoasInput = document.querySelector("#pessoas")
-PessoasInput = addEventListener ("Input", ReceberQtdPessoas)
+PessoasInput.addEventListener ("Input", ReceberQuantidadePessoas)
 
-function ReceberQtdPessoas (event) {
+function ReceberQuantidadePessoas (event) {
     const paragrafoErro = document.querySelector(".pessoas #erro")
     const divErro = document.querySelector (".pessoas .input-box")
 
     if (event.target.value === "0") {
         paragrafoErro.style.display = "block"
         divErro.setAttribute("id", "erro-div")
-    }
-    else {
+    } else {
         paragrafoErro.style.display = "none"
         divErro.setAttribute("id", "")
         pessoas = Number(event.target.value)
     }
+}
+
+const botoesGorjeta = document.querySelectorAll(".gorjeta input[type='button']")
+botoesGorjeta.forEach(botao => {
+    botao.addEventListener("click", receberPorcentagem)
+})
+
+function receberPorcentagem(event) {
+    console.log(event.target.value);
 }
