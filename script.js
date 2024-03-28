@@ -81,4 +81,9 @@ function limpar (){
 
     document.querySelector(".gorjeta-total > strong"),innerHTML = "R$ 0.00"
     document.querySelector(".total > strong"),innerHTML = "R$ 0.00"
+
+    let conta = 0
+    let pessoas = 0
+    let porcentagem = 0
+
 }
